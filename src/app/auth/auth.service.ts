@@ -48,7 +48,8 @@ export class AuthService {
   }
 
   autoLogin(){
-    const userData:{
+    console.log("in autologing...");
+    const userData: {
       email: string,
       id: string,
       _token: string,
@@ -76,7 +77,7 @@ export class AuthService {
   autoLogout(expirationDuration: number){
     this.tokenExpirationTimer = setTimeout(() => {
       this.logout();
-    },expirationDuration);
+    }, expirationDuration);
   }
 
   logout(){
@@ -89,6 +90,15 @@ export class AuthService {
     }
     this.tokenExpirationTimer = null;
   }
+
+  /**
+   * Handles the autentication storage in order to persists when the page is reloaded and restarts
+   * @param email
+   * @param userId
+   * @param token
+   * @param expiresIn
+   * @private
+   */
   private  handleAuthentication(email: string, userId: string, token: string, expiresIn: number){
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new User(email, userId, token, expirationDate);

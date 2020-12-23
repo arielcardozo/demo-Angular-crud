@@ -16,7 +16,10 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import {AuthComponent} from './auth/auth.component';
 import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner/loading-spinner.component';
 import {AuthInterceptorService} from './auth/auth-interceptor.service';
+import {TutorialService} from './services/tutorial.service';
 // import 'ag-grid-enterprise';
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,7 @@ import {AuthInterceptorService} from './auth/auth-interceptor.service';
     AgGridModule.withComponents([])
 
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
+  providers: [TutorialService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
   export class AppModule { }
