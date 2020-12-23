@@ -17,6 +17,7 @@ import {AuthComponent} from './auth/auth.component';
 import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner/loading-spinner.component';
 import {AuthInterceptorService} from './auth/auth-interceptor.service';
 import {TutorialService} from './services/tutorial.service';
+import { AlertComponent } from './shared/alert/alert.component';
 // import 'ag-grid-enterprise';
 
 
@@ -32,7 +33,8 @@ import {TutorialService} from './services/tutorial.service';
     EmployeeListComponent,
     DropdownDirective,
     AuthComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
