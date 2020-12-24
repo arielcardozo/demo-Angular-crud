@@ -18,6 +18,7 @@ import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner/loading
 import {AuthInterceptorService} from './auth/auth-interceptor.service';
 import {TutorialService} from './services/tutorial.service';
 import { AlertComponent } from './shared/alert/alert.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import 'ag-grid-enterprise';
 
 
@@ -41,7 +42,8 @@ import { AlertComponent } from './shared/alert/alert.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    BrowserAnimationsModule
 
   ],
   providers: [TutorialService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
