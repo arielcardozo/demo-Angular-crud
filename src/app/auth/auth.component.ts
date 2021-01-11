@@ -1,6 +1,7 @@
+import {AuthResponseData, AuthService} from './auth.service';
+
 import { Component } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {AuthResponseData, AuthService} from './auth.service';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 
@@ -34,7 +35,7 @@ export class AuthComponent {
     if ( this.isLoginMode ){
       autObs = this.authService.login(email, password);
     }else{
-      this.authService.signUp(email, password);
+      autObs =   this.authService.signUp(email, password);
     }
 
     autObs.subscribe(response => {
